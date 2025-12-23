@@ -2,58 +2,34 @@
 @tailwind components;
 @tailwind utilities;
 
-body {
-	background: linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2)), url("/bg.png");
-	background-repeat: no-repeat;
-	background-size: cover;
-	background-position: center;
+@property --border-angle {
+  inherits: false;
+  initial-value: 0deg;
+  syntax: "<angle>";
 }
 
-/* dark mode looking scrollbar */
-::-webkit-scrollbar {
-	width: 8px;
+.input {
+  @apply w-full bg-slate-800/50 border border-slate-700 rounded-lg py-2 pl-10 pr-4 text-slate-200 placeholder-slate-400 focus:ring-2 focus:ring-cyan-500 focus:border-transparent;
 }
 
-::-webkit-scrollbar-track {
-	background: #555;
+.auth-input-icon {
+  @apply absolute left-3 top-1/2 -translate-y-1/2 text-slate-400 size-5;
 }
 
-::-webkit-scrollbar-thumb {
-	background: #121212;
-	border-radius: 5px;
+.auth-input-label {
+  @apply block text-sm font-medium text-slate-300 mb-2;
 }
 
-::-webkit-scrollbar-thumb:hover {
-	background: #242424;
+.auth-badge {
+  @apply inline-flex items-center px-3 py-1 text-xs font-medium rounded-full bg-cyan-500/20 text-cyan-300;
 }
 
-/* SHAKE ANIMATION ON HORIZONTAL DIRECTION */
-.shake {
-	animation: shake 0.82s cubic-bezier(0.36, 0.07, 0.19, 0.97) 0.2s both;
-	transform: translate3d(0, 0, 0);
-	backface-visibility: hidden;
-	perspective: 1000px;
+.auth-btn {
+  @apply w-full bg-cyan-500 text-white rounded-lg py-2.5 font-medium
+  hover:bg-cyan-600 focus:ring-2 focus:ring-cyan-500;
 }
 
-@keyframes shake {
-	10%,
-	90% {
-		transform: translate3d(-1px, 0, 0);
-	}
-
-	20%,
-	80% {
-		transform: translate3d(2px, 0, 0);
-	}
-
-	30%,
-	50%,
-	70% {
-		transform: translate3d(-4px, 0, 0);
-	}
-
-	40%,
-	60% {
-		transform: translate3d(4px, 0, 0);
-	}
+.auth-link {
+  @apply px-4 py-2 inline-block bg-cyan-500/10 rounded-lg text-cyan-400
+  hover:text-cyan-500 text-sm transition-colors;
 }

@@ -2,7 +2,15 @@
 export default {
 	content: ["./index.html", "./src/**/*.{js,ts,jsx,tsx}"],
 	theme: {
-		extend: {},
+		extend: {
+			animation: {
+        border: "border 4s linear infinite",
+      }, keyframes: {
+        border: {
+          to: { "--border-angle": "360deg" },
+        },
+	},
+		},
 	},
 	// eslint-disable-next-line no-undef
 	plugins: [require("daisyui")],
